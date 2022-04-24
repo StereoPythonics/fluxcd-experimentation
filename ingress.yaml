@@ -7,7 +7,7 @@ spec:
   - http:
       paths:
       - pathType: Prefix
-        path: "/"
+        path: "/pod"
         backend:
           service:
             name: podinfo
