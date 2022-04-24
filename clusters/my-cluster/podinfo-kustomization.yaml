@@ -41,6 +41,7 @@ spec:
               targetPort: grpc
               protocol: TCP
               name: grpc
-      name: podinfo
-      kind: Service
+      target:
+        name: podinfo
+        kind: Service
 
