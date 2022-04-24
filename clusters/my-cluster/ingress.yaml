@@ -1,3 +1,15 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: test-service
+spec:
+  selector:
+    app: podinfo
+  ports:
+  # Default port used by the image
+  - port: 9898
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -10,6 +22,6 @@ spec:
         path: "/pod"
         backend:
           service:
-            name: podinfo
+            name: test-service
             port:
               number: 9898
