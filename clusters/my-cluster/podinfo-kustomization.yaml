@@ -23,18 +23,3 @@ spec:
       target:
         name: podinfo
         kind: HorizontalPodAutoscaler
-    - patch: |-
-        apiVersion: v1
-        kind: Service
-        metadata:
-          name: podinfo
-        spec:
-          type: NodePort
-          ports:
-            - port: 9898
-              nodePort: 30000
-          selector:
-            name: podinfo            
-      target:
-        name: podinfo
-        kind: Service
