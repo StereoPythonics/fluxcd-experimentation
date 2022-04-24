@@ -37,6 +37,7 @@ spec:
               port: 9898
               protocol: TCP
               targetPort: http
+              hostport: 4567
             - port: 9999
               targetPort: grpc
               protocol: TCP
