@@ -23,26 +23,3 @@ spec:
       target:
         name: podinfo
         kind: HorizontalPodAutoscaler
-    - patch: |-
-        apiVersion: v1
-        kind: Service
-        metadata:
-          name: podinfo
-        spec:
-          type: LoadBalancer
-          selector:
-            app: podinfo
-          ports:
-            - name: http
-              port: 9898
-              protocol: TCP
-              targetPort: http
-              hostport: 4567
-            - port: 9999
-              targetPort: grpc
-              protocol: TCP
-              name: grpc
-      target:
-        name: podinfo
-        kind: Service
-
